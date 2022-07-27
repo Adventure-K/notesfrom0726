@@ -1,0 +1,63 @@
+//////// AFTN NOTES ////////
+A server is a program that tells the machine to expect connections
+
+Client requests things from server --- always makes the request
+Server gives requested things to client
+
+A protocol allows different machines to communicate by standardizing their language
+HTTP, SMP, FTP, POP, IMAP
+
+*DOING GIT FROM THE START*
+git init
+git add .
+git commit -m "initial commit"
+
+make the .gitignore file with contents:
+    .DS_Store
+    *.log
+    node-modules/
+
+get and use expressJS
+
+node includes NPM - node package manager, a gigantic library of Alexandria that allows anyone to push up JS libraries and anyone to download them
+
+homebrew is another one - where you get node
+
+Only required if you do not already have a package.json: npm init --yes // creates a package.json
+    (json: javascript object notation. json files are very similar to but not the same as JS objects)
+how to install expressJS: npm install express
+
+will create package-lock.json. NEVER FUCK WITH THIS
+
+most future prime projects:
+fork
+clone
+package.json? -no-> npm init --yes
+                -yes-> check json for dependency: express -no-> npm install express
+                                                            -yes-> yusss
+
+'server' folder at root of projects. might also sometimes be called 'www' 
+    server.js
+    folder: 'public' // everything to be shared abroad goes in here
+        index.html
+        folder 'scripts'
+            client.js
+        folder 'styles'
+            style.css
+        folder 'vendors' // anything 3rd party
+            e.g. jQuery
+
+Must now build a static fileserver in server.js
+    e.g. facebook.com -> HTML is static. data is dynamic.
+
+To stop the server, in the terminal, in the dir of your server.js, press ctrl+c.
+If you can't find it, type killall node -9
+If the server is running you'll see > node on the top right of the vscode terminal. To do terminal stuff, turn it off
+
+Whenever you make changes to server.js, you must restart the server for changes to appear.
+
+server-side console.log -> terminal
+client-side console.log -> browser dev tools console
+
+put this in the json: "start": "node server/server.js" as a property of scripts: {
+this lets you type npm start in the terminal to start the server
